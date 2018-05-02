@@ -3,6 +3,7 @@ from keras.layers import Conv2D
 from keras.layers import MaxPooling2D
 from keras.layers import Flatten
 from keras.layers import Dense
+from keras.models import load_model
 
 # Initialising the CNN
 classifier = Sequential()
@@ -42,3 +43,4 @@ classifier.fit_generator(training_set,
                          validation_data = test_set,
                          validation_steps = 2000)
 
+classifier.save('my_model.h5')
